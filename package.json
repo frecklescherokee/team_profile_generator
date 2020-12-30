@@ -1,0 +1,25 @@
+{
+  "name": "team_profile_generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "Jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frecklescherokee/team_profile_generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frecklescherokee/team_profile_generator/issues"
+  },
+  "homepage": "https://github.com/frecklescherokee/team_profile_generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
