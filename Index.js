@@ -11,15 +11,6 @@ let engineers = [];
 let interns = [];
 
 let promptQuestions = employeeData => {
-    // if (!employeeData.managers) {
-    //     employeeData.managers = [];
-    // }
-    // if (!employeeData.engineers) {
-    //     employeeData.engineers = [];
-    // }
-    // if (!employeeData.interns) {
-    //     employeeData.interns = [];
-    // }
 
     return inquirer.prompt ([
         {
@@ -131,12 +122,6 @@ let promptQuestions = employeeData => {
       });
 }
 
-function showData () {
-    console.log(managers);
-    console.log(engineers);
-    console.log(interns);
-}
-
 // function to write the readme file to its location
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
@@ -168,12 +153,6 @@ function start() {
     .then(pageHTML => {
         return writeFile(pageHTML);
     })
-    // .then(data => {
-    //     showData();
-    // })
-    // showData();
-    // writeFile(generateHTML());
-    // then catch errors
     .catch(err => {
         console.log(err);
     });
@@ -182,7 +161,7 @@ function start() {
 
 start();
 
-showData();
+
 
 
 
