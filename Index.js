@@ -4,6 +4,7 @@ const Manager = require ('./lib/Manager');
 const Intern = require ('./lib/Intern');
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateHTML = require('./src/generateHTML.js');
 
 let managers = [];
 let engineers = [];
@@ -136,12 +137,6 @@ function showData () {
     console.log(interns);
 }
 
-function generateHTML() {
-    return `
-    Enter HTML Here`;
-
-}
-
 // function to write the readme file to its location
 const writeFile = fileContent => {
     return new Promise((resolve, reject) => {
@@ -164,23 +159,30 @@ const writeFile = fileContent => {
 
 
 
-
-
-
 function start() {
     promptQuestions()
+    .then(data => {
+        return generateHTML(managers, engineers, interns);
+    })
+    // then write a README file with that content
+    .then(pageHTML => {
+        return writeFile(pageHTML);
+    })
     // .then(data => {
     //     showData();
     // })
-    showData();
-    writeFile(generateHTML());
+    // showData();
+    // writeFile(generateHTML());
     // then catch errors
-    // .catch(err => {
-    //     console.log(err);
-    // });
+    .catch(err => {
+        console.log(err);
+    });
 }
 
+
 start();
+
+showData();
 
 
 
