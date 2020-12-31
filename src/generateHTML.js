@@ -22,15 +22,21 @@ function generateHTML (managers, engineers, interns) {
         <section class="management container-fluid">
             <h2>Management</h2>
         </section>
+        <div class="row">
         ${generateManagerCards(managerArr)}
+        </div>
         <section class="engineers container-fluid">
             <h2>Engineers</h2>
         </section>
+        <div class="row">
         ${generateEngineerCards(engineerArr)}
+        </div>
         <section class="interns container-fluid">
             <h2>Interns</h2>
         </section>
+        <div class="row">
         ${generateInternCards(internsArr)}
+        </div>
     
     
     
@@ -46,7 +52,6 @@ function generateManagerCards (managersArr) {
     }
     const managerCardsArr = managersArr.map(managerData => {
         return `
-    <div class="row">
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" style="width: 5rem" src="./images/manager.png" alt="Card image cap">
             <div class="card-body">
@@ -55,8 +60,7 @@ function generateManagerCards (managersArr) {
               <p class="card-text">Email: ${managerData.email}</p>
               <p class="card-text">Office No: ${managerData.officeNumber}</p>
             </div>
-        </div>
-    </div>`
+        </div>`
     });
     return `
     ${managerCardsArr.join(`
